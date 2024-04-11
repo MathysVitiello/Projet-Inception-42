@@ -1,0 +1,4 @@
+// docker build -t nginx . --> build le container, l'appelle nginx dans le repertoire actuel (donc donner le bon chemin si on est pas le bon dossier)
+// docker run -it nginx  /bin/bash --> cree l'image ou ouvre le terminal de celle ci grace a -it (avec le nom de l'image "nginx") 
+// docker rmi -f f7419959a15e --> delete une image de force
+// docker image ls --> ls les images
