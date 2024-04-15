@@ -1,0 +1,35 @@
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+		
+server {
+    listen 443 ssl;
+    # Depuis la version 1.12 de NGINX, il faut préciser ssl.
+    ssl_protocols TLSv1.2 TLSv1.3;
+    # Indiquons notre certificat
+    ssl_certificate /src/requirements/nginx/ssl/inception.crt;
+    # et notre clef
+    ssl_certificate_key /src/requirements/nginx/ssl/inception.key;
+    
+
+    #root and index and server_name iic bizarre aussi 
+    root /var/www/wordpress
+    # C’est le dossier où se trouvera WordPress et donc sa première page à afficher. 
+    server_name localhost;
+    # Étant donné que la connexion se fera depuis localhost, je l’indique en server_name
+    index index.php index.html index.htm;
+    # Je vais également préciser quelle page afficher en premier, dans le cadre de WordPress il faut indiquer index.php, mais je vais également en ajouter d’autres qui me semblent importantes.
+}
+
+location ~ \.php$ {								
+    include snippets/fastcgi-php.conf;
+    # Pour toutes les requetes php
+    fastcgi_pass wordpress:9000;
+    # Comment renvoyer les requetes php sur le port 9000
+}
+
+location / {
+    try_files $uri $uri/ =404;
+}
+					

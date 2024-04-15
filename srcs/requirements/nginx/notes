@@ -2,3 +2,15 @@
 // docker run -it nginx  /bin/bash --> cree l'image ou ouvre le terminal de celle ci grace a -it (avec le nom de l'image "nginx") 
 // docker rmi -f f7419959a15e --> delete une image de force
 // docker image ls --> ls les images
+
+// Il serait également important de télécharger l’outil principal pour la gestion/création de certificat SSL, OpenSSL -> sudo apt-get install openssl
+# Votre clef et votre certificat TSL sont désormais automatiquement créés au démarrage de votre container ! 
+
+///! penser a rmi pour recompiler
+(surement build a la compilation)
+
+ //  !!! Avant de lancer NGINX, il faudrait indiquer à NGINX la configuration qu’on souhaite utiliser dans le cadre d’Inception. 
+
+
+ //alex =  docker run -d -p 8080:80 nginx
+ //sur http://localhost:8080  faudrat chnager en login ca
