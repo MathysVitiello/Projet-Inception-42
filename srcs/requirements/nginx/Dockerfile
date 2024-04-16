@@ -1,7 +1,7 @@
 FROM debian:bullseye
 # debian::bullseye
 # buster
-RUN apt update \
+RUN apt update -y \
     && apt install nginx -y \
     && mkdir -p /src/requirements/nginx/ssl \
     && apt-get install openssl \
@@ -14,10 +14,7 @@ RUN chmod 755 /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 # (l’utilisateur principal)
 
-
-# COPY conf/nginx.conf /etc/nginx/
-
-COPY conf /src/requirements/nginx/nginx.conf
+COPY conf/nginx.conf /etc/nginx/nginx.conf
 # index index.php index.html index.htm index.nginx-debian.html ;
 # top ! le copy sert a predre un ficher qui existe de nginx et de le remplacer avec celui modifier
 
