@@ -9,7 +9,7 @@ RUN apt update -y \
     && mkdir -p /var/run/nginx
 
 RUN chmod 755 /var/www/html 
-# (notre root principal) iic bizarre 
+# (notre root principal) ici bizarre 
 
 RUN chown -R www-data:www-data /var/www/html
 # (l’utilisateur principal)
@@ -19,3 +19,5 @@ COPY conf/nginx.conf /etc/nginx/nginx.conf
 # top ! le copy sert a predre un ficher qui existe de nginx et de le remplacer avec celui modifier
 
 CMD [ "nginx", "-g", "daemon off;" ]
+# docker run -d -p 8080:80 nginx
+# surement a ajouter ici
