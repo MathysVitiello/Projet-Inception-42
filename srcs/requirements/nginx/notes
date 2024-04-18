@@ -14,3 +14,7 @@
 
  //alex =  docker run -d -p 8080:80 nginx
  //sur http://localhost:8080  faudrat chnager en login ca
+
+ //docker-compose -f docker-compose.yml down -v
+//pour tout del
+//docker compose up --build    -> pour compiler le yml
