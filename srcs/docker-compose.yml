@@ -28,7 +28,7 @@ services:
     env_file: .env
     ports:
     - "443:443"
-    restart: on-failure
+    restart: always
   wordpress:
     container_name: wordpress
     env_file: .env
@@ -51,7 +51,7 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: /sgoinfre/goinfre/Perso/mvitiell
+      device: '/sgoinfre/goinfre/Perso/mvitiell'
   mariadb:
     driver: local
     driver_opts:
