@@ -15,4 +15,5 @@ ENTRYPOINT [ "sh", "/etc/mysql/script.sh" ]
 # jespere que ce fonctionne mais il faudrat verifier quand les mdp seront mis
 
 
-# ! POUR MARIA, ILS DEMANDENT UN MDP, ASKIP UTILISER .ENV dans srcs
+# ! POUR MARIA, ILS DEMANDENT UN MDP, 
+# ASKIP UTILISER .ENV dans srcs

@@ -18,3 +18,7 @@
  //docker-compose -f docker-compose.yml down -v
 //pour tout del
 //docker compose up --build    -> pour compiler le yml
+
+// dernier changement, le nginx.ocnf, voir alex / nil 
+
+# docker system prune --force
