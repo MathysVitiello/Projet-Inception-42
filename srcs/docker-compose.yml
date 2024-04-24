@@ -43,6 +43,7 @@ services:
    restart: always
    expose: 
    - "9000"
+   tty: true
 
 volumes:
   wordpress:
@@ -57,6 +58,7 @@ volumes:
       type: 'none' 
       o: 'bind'
       device: '/home/mathys/data/mariadb'
+
 networks:
   inception:
     driver: bridge
